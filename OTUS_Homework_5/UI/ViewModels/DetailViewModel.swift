@@ -9,3 +9,4 @@ struct DetailViewModel {
         ["abr", "cad", "bra", "abc"].sorted()
     }
 }
+
