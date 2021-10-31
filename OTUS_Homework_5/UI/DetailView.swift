@@ -2,18 +2,13 @@ import SwiftUI
 
 struct DetailView: View {
     
-    @State var inputText: String
+    let viewModel: DetailViewModel
     
-    
-    init(inputText: String) {
-        print("\(Self.self).\(#function)")
-        self.inputText = inputText
-    }
+    @State var selection: Int = 0
     
     var body: some View {
-        VStack {
-            Text(inputText)
-        }
+        SegmentedView(childViews: ["Suffix stats" : AnyView(Text("Suffix stat view")),
+                                   "Top triads": AnyView(Text("Triads view"))])
         .navigationTitle("Suffixes")
         
     }
@@ -21,6 +16,6 @@ struct DetailView: View {
 
 struct DetailView_Previews: PreviewProvider {
     static var previews: some View {
-        DetailView(inputText: "Hello world")
+        DetailView(viewModel: DetailViewModel(text: "Hello world"))
     }
 }

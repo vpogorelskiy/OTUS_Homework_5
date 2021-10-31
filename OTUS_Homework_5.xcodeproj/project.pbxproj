@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2B1E0794272F136900DA317B /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1E0793272F136900DA317B /* DetailViewModel.swift */; };
 		2BA03C8B272DAB070057BD79 /* TextInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA03C8A272DAB070057BD79 /* TextInputView.swift */; };
 		2BA03C8D272DAC260057BD79 /* ViewBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA03C8C272DAC260057BD79 /* ViewBuilder.swift */; };
 		2BA03C8F272DAC8F0057BD79 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA03C8E272DAC8F0057BD79 /* DetailView.swift */; };
@@ -47,6 +48,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		2B1E0793272F136900DA317B /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 		2BA03C8A272DAB070057BD79 /* TextInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextInputView.swift; sourceTree = "<group>"; };
 		2BA03C8C272DAC260057BD79 /* ViewBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewBuilder.swift; sourceTree = "<group>"; };
 		2BA03C8E272DAC8F0057BD79 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
@@ -84,9 +86,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2B1E0792272F134F00DA317B /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				2B1E0793272F136900DA317B /* DetailViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 		2BA03C88272DAAE70057BD79 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				2B1E0792272F134F00DA317B /* ViewModels */,
 				2BA03C8A272DAB070057BD79 /* TextInputView.swift */,
 				2BA03C8C272DAC260057BD79 /* ViewBuilder.swift */,
 				2BA03C8E272DAC8F0057BD79 /* DetailView.swift */,
@@ -256,6 +267,7 @@
 			files = (
 				D6E1B3982729A80A00A6F2D7 /* OTUS_Homework_5App.swift in Sources */,
 				2BA03C91272DB5100057BD79 /* NavigationLazyView.swift in Sources */,
+				2B1E0794272F136900DA317B /* DetailViewModel.swift in Sources */,
 				2BA03C8D272DAC260057BD79 /* ViewBuilder.swift in Sources */,
 				2BA03C8F272DAC8F0057BD79 /* DetailView.swift in Sources */,
 				2BA03C8B272DAB070057BD79 /* TextInputView.swift in Sources */,

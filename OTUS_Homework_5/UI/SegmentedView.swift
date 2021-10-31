@@ -5,17 +5,18 @@ struct SegmentedView: View {
     
     @State private var selection: Int = 0
     
-    private lazy var keys: [String] = { childViews.keys.sorted() }()
+    private let keys: [String]
     
     init(childViews: [String: AnyView]) {
         self.childViews = childViews
+        self.keys = childViews.map{$0.key}.sorted()
     }
     
     var body: some View {
         VStack() {
             Picker("Picker", selection: $selection) {
-                ForEach(childViews.keys.sorted(), id: \.self) { key in
-                    Text(key)
+                ForEach(Array(zip(keys.indices, keys)), id: \.0) { index, key in
+                    Text(key).tag(index)
                 }
             }
             .pickerStyle(SegmentedPickerStyle())
