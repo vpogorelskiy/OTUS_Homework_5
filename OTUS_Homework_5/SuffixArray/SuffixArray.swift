@@ -1,3 +1,5 @@
+import Foundation
+
 struct SuffixArray: Sequence {
     let string: String
     
@@ -27,6 +29,12 @@ struct SuffixIterator: IteratorProtocol {
 
 extension String {
     func suffixArray() -> [Substring] {
-        return SuffixArray(self).sorted()
+        let separators = CharacterSet.whitespaces.union(.punctuationCharacters)
+        let words = components(separatedBy: separators).filter{ !$0.isEmpty }
+        let output = words.reduce(into: []) { partialResult, word in
+            partialResult += SuffixArray(word)
+        }
+        
+        return output 
     }
 }
