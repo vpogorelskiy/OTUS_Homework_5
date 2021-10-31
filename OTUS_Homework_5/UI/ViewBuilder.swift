@@ -6,7 +6,7 @@ enum ViewBuilder {
     }
     
     static func detailView(inputText: String) -> some View {
-        DetailView(inputText: inputText)
+        SegmentedView(childViews: ["Statistics": AnyView(Text("Statistics view")),
+                                   "Top triads": AnyView(Text("Statistics view"))])
     }
-    
 }

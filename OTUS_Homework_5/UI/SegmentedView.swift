@@ -1,20 +1,37 @@
 import SwiftUI
 
 struct SegmentedView: View {
-    @State var selection: Int = 0
+    let childViews: [String: AnyView]
     
-    let childViews: [String: Text] = ["1": Text("View 1"),
-                                      "2": Text("View 2")]
-    lazy var keys: [String] = { childViews.keys.sorted() }()
+    @State private var selection: Int = 0
+    
+    private lazy var keys: [String] = { childViews.keys.sorted() }()
+    
+    init(childViews: [String: AnyView]) {
+        self.childViews = childViews
+    }
     
     var body: some View {
-        Picker("Picker", selection: $selection) {
-            ForEach(childViews.keys.sorted(), id: \.self) { key in
-                Text(key)
+        VStack() {
+            Picker("Picker", selection: $selection) {
+                ForEach(childViews.keys.sorted(), id: \.self) { key in
+                    Text(key)
+                }
+            }
+            .pickerStyle(SegmentedPickerStyle())
+            let key = childViews.keys.sorted()[selection]
+            Divider()
+            ScrollView {
+                childViews[key]
             }
         }
-        .pickerStyle(SegmentedPickerStyle())
-        let key = childViews.keys.sorted()[selection]
-        childViews[key]
+        
+    }
+}
+
+struct SegmentedView_Previews: PreviewProvider {
+    static var previews: some View {
+        SegmentedView(childViews: ["1": AnyView(Text("View 1")),
+                                   "2": AnyView(Text("View 2"))])
     }
 }
