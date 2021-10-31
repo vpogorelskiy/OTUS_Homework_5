@@ -4,10 +4,8 @@ struct DetailView: View {
     
     let viewModel: DetailViewModel
     
-    @State var selection: Int = 0
-    
     var body: some View {
-        SegmentedView(childViews: ["Suffix stats" : AnyView(Text("Suffix stat view")),
+        SegmentedView(childViews: ["Suffix stats" : AnyView(SuffixesView(viewModel: viewModel)),
                                    "Top triads": AnyView(Text("Triads view"))])
         .navigationTitle("Suffixes")
         

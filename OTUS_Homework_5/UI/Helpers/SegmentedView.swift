@@ -13,7 +13,7 @@ struct SegmentedView: View {
     }
     
     var body: some View {
-        VStack() {
+        VStack {
             Picker("Picker", selection: $selection) {
                 ForEach(Array(zip(keys.indices, keys)), id: \.0) { index, key in
                     Text(key).tag(index)
@@ -22,9 +22,9 @@ struct SegmentedView: View {
             .pickerStyle(SegmentedPickerStyle())
             let key = childViews.keys.sorted()[selection]
             Divider()
-            ScrollView {
-                childViews[key]
-            }
+            
+            childViews[key]
+
         }
         
     }
