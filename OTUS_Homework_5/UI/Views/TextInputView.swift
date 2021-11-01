@@ -5,14 +5,28 @@ struct TextInputView: View {
     @State private var inputText: String = ""
     
     var body: some View {
-        NavigationView {
+        UITextField.appearance().clearButtonMode = .whileEditing
+        return NavigationView {
             VStack {
-                TextField("Enter Text", text: $inputText)
-                    .multilineTextAlignment(.center)
-                    .textFieldStyle(.roundedBorder)
+                TextEditor(text: $inputText)
+                    .overlay(RoundedRectangle(cornerRadius: 5).stroke(Color.gray ,lineWidth: 1))
                     .padding()
-                NavigationLink("Analyze",
-                               destination: NavigationLazyView(ViewBuilder.detailView(inputText: inputText)))
+
+                ZStack {
+                    NavigationLink("Analyze",
+                                   destination: NavigationLazyView(ViewBuilder.detailView(inputText: inputText)))
+                    HStack {
+                        Spacer()
+                        Button {
+                            inputText = ""
+                        } label: {
+                            Image(systemName: "xmark.circle")
+                        }
+                        .foregroundColor(.red)
+                        Spacer().frame(width: 16)
+                    }
+                }
+                
             }
             .navigationTitle("Analyze input text")
         }
