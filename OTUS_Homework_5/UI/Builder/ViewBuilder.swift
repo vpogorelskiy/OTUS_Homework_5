@@ -1,6 +1,10 @@
 import SwiftUI
 
 enum ViewBuilder {
+    static func rootView() -> some View {
+        RootView()
+    }
+    
     static func inputView() -> some View {
         TextInputView()
     }
@@ -11,5 +15,9 @@ enum ViewBuilder {
         return SegmentedView(childViews: ["Statistics": AnyView(SuffixesView(viewModel: vm)),
                                           "Top triads": AnyView(TriadsView(viewModel: vm))])
             .navigationTitle("Text suffixes")
+    }
+    
+    static func historyView() -> some View {
+        HistoryView()
     }
 }

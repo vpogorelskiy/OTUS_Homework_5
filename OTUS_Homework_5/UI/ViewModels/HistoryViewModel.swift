@@ -1,4 +1,4 @@
-struct HeistoryViewModel {
+struct HistoryViewModel {
     let textHistory: [String]
 
     init() {
