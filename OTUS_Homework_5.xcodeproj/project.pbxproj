@@ -138,17 +138,25 @@
 			path = Cache;
 			sourceTree = "<group>";
 		};
-		2BA03C88272DAAE70057BD79 /* UI */ = {
+		2B73B226272F9A3400E1CEA3 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				2B73B221272F972C00E1CEA3 /* Cache */,
-				2B1E0797272F18DF00DA317B /* Builder */,
-				2B1E0796272F18CF00DA317B /* Helpers */,
-				2B1E0792272F134F00DA317B /* ViewModels */,
 				2BA03C8A272DAB070057BD79 /* TextInputView.swift */,
 				2B1E0798272F191E00DA317B /* SuffixesView.swift */,
 				2B1E079A272F1DAB00DA317B /* TriadsView.swift */,
 				2BA03C8E272DAC8F0057BD79 /* DetailView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		2BA03C88272DAAE70057BD79 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				2B1E0797272F18DF00DA317B /* Builder */,
+				2B73B221272F972C00E1CEA3 /* Cache */,
+				2B1E0796272F18CF00DA317B /* Helpers */,
+				2B1E0792272F134F00DA317B /* ViewModels */,
+				2B73B226272F9A3400E1CEA3 /* Views */,
 			);
 			path = UI;
 			sourceTree = "<group>";
