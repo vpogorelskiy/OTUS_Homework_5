@@ -36,12 +36,19 @@ struct MyWidgetEntryView : View {
     var entry: Provider.Entry
 
     var body: some View {
-        Text(entry.date, style: .time)
+        HStack {
+            Link("Add new", destination: URL(fileURLWithPath: DeepLinks.newWordPath)).padding()
+            Spacer()
+            Link("View History", destination: URL(fileURLWithPath: DeepLinks.historyPath)).padding()
+        }
     }
 }
 
 @main
 struct MyWidget: Widget {
+    
+    
+    
     let kind: String = "MyWidget"
 
     var body: some WidgetConfiguration {
@@ -50,12 +57,13 @@ struct MyWidget: Widget {
         }
         .configurationDisplayName("My Widget")
         .description("This is an example widget.")
+        .supportedFamilies([.systemMedium])
     }
 }
 
 struct MyWidget_Previews: PreviewProvider {
     static var previews: some View {
         MyWidgetEntryView(entry: SimpleEntry(date: Date()))
-            .previewContext(WidgetPreviewContext(family: .systemSmall))
+            .previewContext(WidgetPreviewContext(family: .systemMedium))
     }
 }
