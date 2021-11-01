@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct HistoryView: View {
-    let viewModel = HistoryViewModel()
+    @ObservedObject var viewModel = HistoryViewModel()
     
     var body: some View {
         NavigationView {
@@ -11,7 +11,7 @@ struct HistoryView: View {
                         NavigationLazyView(ViewBuilder.detailView(inputText: text))
                     }
                 }
-            }
+            }.navigationTitle("Search history")
         }
     }
 }

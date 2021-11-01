@@ -1,7 +1,12 @@
 
 import Foundation
 
+extension Notification.Name {
+    static let wordCacheDidChange = Notification.Name(rawValue: "wordCacheDidChange")
+}
+
 class WordCache {
+    
     
     private let defaultsKey = "OtusHomeworkDefaultsKey"
     private let defaults: UserDefaults
@@ -18,6 +23,7 @@ class WordCache {
         var lastUsed = getLastUsed()
         lastUsed.append(string)
         defaults.setValue(lastUsed, forKey: defaultsKey)
+        NotificationCenter.default.post(name: .wordCacheDidChange, object: nil)
     }
     
 }
