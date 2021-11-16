@@ -12,6 +12,8 @@
 		2B1E079B272F1DAB00DA317B /* TriadsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1E079A272F1DAB00DA317B /* TriadsView.swift */; };
 		2B1E079E272F2C8900DA317B /* SuffixArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1E079D272F2C8900DA317B /* SuffixArray.swift */; };
 		2B41AF762744231400490A02 /* DI in Frameworks */ = {isa = PBXBuildFile; productRef = 2B41AF752744231400490A02 /* DI */; };
+		2B41AF782744236D00490A02 /* TextParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B41AF772744236D00490A02 /* TextParser.swift */; };
+		2B41AF7B274425E300490A02 /* OrderedCollections in Frameworks */ = {isa = PBXBuildFile; productRef = 2B41AF7A274425E300490A02 /* OrderedCollections */; };
 		2B73B223272F973D00E1CEA3 /* WordCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B73B222272F973D00E1CEA3 /* WordCache.swift */; };
 		2B73B225272F99AD00E1CEA3 /* HistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B73B224272F99AD00E1CEA3 /* HistoryViewModel.swift */; };
 		2B73B228272F9A5B00E1CEA3 /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B73B227272F9A5B00E1CEA3 /* HistoryView.swift */; };
@@ -63,6 +65,7 @@
 		2B1E079A272F1DAB00DA317B /* TriadsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriadsView.swift; sourceTree = "<group>"; };
 		2B1E079D272F2C8900DA317B /* SuffixArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuffixArray.swift; sourceTree = "<group>"; };
 		2B41AF74274422F400490A02 /* DI */ = {isa = PBXFileReference; lastKnownFileType = folder; name = DI; path = Packages/DI; sourceTree = "<group>"; };
+		2B41AF772744236D00490A02 /* TextParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextParser.swift; sourceTree = "<group>"; };
 		2B73B222272F973D00E1CEA3 /* WordCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordCache.swift; sourceTree = "<group>"; };
 		2B73B224272F99AD00E1CEA3 /* HistoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewModel.swift; sourceTree = "<group>"; };
 		2B73B227272F9A5B00E1CEA3 /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
@@ -90,6 +93,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B41AF7B274425E300490A02 /* OrderedCollections in Frameworks */,
 				2B41AF762744231400490A02 /* DI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -173,6 +177,7 @@
 			isa = PBXGroup;
 			children = (
 				2B73B22C272FA51F00E1CEA3 /* DeepLinks.swift */,
+				2B41AF772744236D00490A02 /* TextParser.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -269,6 +274,7 @@
 			name = OTUS_Homework_5;
 			packageProductDependencies = (
 				2B41AF752744231400490A02 /* DI */,
+				2B41AF7A274425E300490A02 /* OrderedCollections */,
 			);
 			productName = OTUS_Homework_5;
 			productReference = D6E1B3942729A80A00A6F2D7 /* OTUS_Homework_5.app */;
@@ -318,6 +324,9 @@
 				Base,
 			);
 			mainGroup = D6E1B38B2729A80900A6F2D7;
+			packageReferences = (
+				2B41AF79274425E300490A02 /* XCRemoteSwiftPackageReference "swift-collections" */,
+			);
 			productRefGroup = D6E1B3952729A80A00A6F2D7 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -366,6 +375,7 @@
 				2BA03C8F272DAC8F0057BD79 /* DetailView.swift in Sources */,
 				2B1E0799272F191E00DA317B /* SuffixesView.swift in Sources */,
 				2BA03C8B272DAB070057BD79 /* TextInputView.swift in Sources */,
+				2B41AF782744236D00490A02 /* TextParser.swift in Sources */,
 				2B1E079B272F1DAB00DA317B /* TriadsView.swift in Sources */,
 				2BA03C93272DBC2A0057BD79 /* SegmentedView.swift in Sources */,
 			);
@@ -655,10 +665,26 @@
 		};
 /* End XCConfigurationList section */
 
+/* Begin XCRemoteSwiftPackageReference section */
+		2B41AF79274425E300490A02 /* XCRemoteSwiftPackageReference "swift-collections" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-collections.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
 /* Begin XCSwiftPackageProductDependency section */
 		2B41AF752744231400490A02 /* DI */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = DI;
+		};
+		2B41AF7A274425E300490A02 /* OrderedCollections */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2B41AF79274425E300490A02 /* XCRemoteSwiftPackageReference "swift-collections" */;
+			productName = OrderedCollections;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

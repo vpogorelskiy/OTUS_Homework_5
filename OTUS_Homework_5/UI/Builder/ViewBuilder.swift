@@ -1,6 +1,17 @@
 import SwiftUI
+import DI
 
 enum ViewBuilder {
+    static func registerDependencies() {
+        Resolver.sharedInstance.register(TextParser.self) { r in
+            TextParser()
+        }
+        
+        Resolver.sharedInstance.register(WordCache.self) { r in
+            WordCache()
+        }
+    }
+    
     static func rootView() -> some View {
         RootView()
     }
