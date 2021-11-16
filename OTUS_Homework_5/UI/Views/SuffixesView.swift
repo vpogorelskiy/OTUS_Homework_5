@@ -2,7 +2,7 @@ import SwiftUI
 
 struct SuffixesView: View {
     
-    let viewModel: DetailViewModel
+    let viewModel: SuffixViewModel
     
     @State var selection: Int = 0
     private let segments = ["A-Z", "Z-A"]
@@ -27,6 +27,6 @@ struct SuffixesView: View {
 
 struct SuffixesView_Previews: PreviewProvider {
     static var previews: some View {
-        SuffixesView(viewModel: DetailViewModel(text: "Hello world"))
+        SuffixesView(viewModel: SuffixViewModel())
     }
 }

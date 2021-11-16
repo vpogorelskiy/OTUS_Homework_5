@@ -6,8 +6,6 @@ extension Notification.Name {
 }
 
 class WordCache {
-    
-    
     private let defaultsKey = "OtusHomeworkDefaultsKey"
     private let defaults: UserDefaults
     
@@ -21,9 +19,11 @@ class WordCache {
     
     func addText(string: String) {
         var lastUsed = getLastUsed()
-        lastUsed.append(string)
+        if !lastUsed.contains(string) {
+            lastUsed.append(string)
+        }
+        
         defaults.setValue(lastUsed, forKey: defaultsKey)
         NotificationCenter.default.post(name: .wordCacheDidChange, object: nil)
     }
-    
 }

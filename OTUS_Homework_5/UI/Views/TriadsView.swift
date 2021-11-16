@@ -2,7 +2,7 @@ import SwiftUI
 
 struct TriadsView: View {
     
-    let viewModel: DetailViewModel
+    let viewModel: SuffixViewModel
     
     var body: some View {
         List {
@@ -15,6 +15,6 @@ struct TriadsView: View {
 
 struct TriadsView_Previews: PreviewProvider {
     static var previews: some View {
-        TriadsView(viewModel: DetailViewModel(text: "Hello world"))
+        TriadsView(viewModel: SuffixViewModel())
     }
 }

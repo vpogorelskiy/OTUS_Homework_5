@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2B1E0794272F136900DA317B /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1E0793272F136900DA317B /* DetailViewModel.swift */; };
+		2B1E0794272F136900DA317B /* SuffixViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1E0793272F136900DA317B /* SuffixViewModel.swift */; };
 		2B1E0799272F191E00DA317B /* SuffixesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1E0798272F191E00DA317B /* SuffixesView.swift */; };
 		2B1E079B272F1DAB00DA317B /* TriadsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1E079A272F1DAB00DA317B /* TriadsView.swift */; };
 		2B1E079E272F2C8900DA317B /* SuffixArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1E079D272F2C8900DA317B /* SuffixArray.swift */; };
@@ -57,7 +57,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		2B1E0793272F136900DA317B /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
+		2B1E0793272F136900DA317B /* SuffixViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuffixViewModel.swift; sourceTree = "<group>"; };
 		2B1E0798272F191E00DA317B /* SuffixesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuffixesView.swift; sourceTree = "<group>"; };
 		2B1E079A272F1DAB00DA317B /* TriadsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriadsView.swift; sourceTree = "<group>"; };
 		2B1E079D272F2C8900DA317B /* SuffixArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuffixArray.swift; sourceTree = "<group>"; };
@@ -107,7 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				2B73B224272F99AD00E1CEA3 /* HistoryViewModel.swift */,
-				2B1E0793272F136900DA317B /* DetailViewModel.swift */,
+				2B1E0793272F136900DA317B /* SuffixViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -345,7 +345,7 @@
 				2B73B22A272F9B6300E1CEA3 /* RootView.swift in Sources */,
 				2B73B228272F9A5B00E1CEA3 /* HistoryView.swift in Sources */,
 				2B73B22D272FA51F00E1CEA3 /* DeepLinks.swift in Sources */,
-				2B1E0794272F136900DA317B /* DetailViewModel.swift in Sources */,
+				2B1E0794272F136900DA317B /* SuffixViewModel.swift in Sources */,
 				2B73B223272F973D00E1CEA3 /* WordCache.swift in Sources */,
 				2BA03C8D272DAC260057BD79 /* ViewBuilder.swift in Sources */,
 				2BA03C8F272DAC8F0057BD79 /* DetailView.swift in Sources */,

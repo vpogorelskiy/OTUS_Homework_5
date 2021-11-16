@@ -1,11 +1,13 @@
 import SwiftUI
 
-struct NavigationLazyView<Content: View>: View {
+struct NavigationLazyView<Content>: View where Content: View {
     let build: () -> Content
-    init(_ build: @autoclosure @escaping () -> Content) {
+    
+    public init(_ build: @escaping () -> Content) {
         self.build = build
     }
-    var body: Content {
+    
+    var body: some View {
         build()
     }
 }

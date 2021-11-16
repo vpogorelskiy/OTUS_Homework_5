@@ -1,9 +1,14 @@
-struct DetailViewModel {
-    let suffixTuples: [(String, Int)]
-    let topTriads: [String]
+import Combine
+
+final class SuffixViewModel: ObservableObject {
+    @Published var suffixTuples: [(String, Int)] = []
+    @Published var topTriads: [String] = []
     
+    var text: String = ""
     
-    init(text: String) {
+    init() {}
+    
+    func analyze() {
         let suffixes = text.suffixArray()
         let suffixDict = suffixes.reduce(into: [Substring:Int]()) { partialResult, suffix in
             let count = partialResult[suffix] ?? 0

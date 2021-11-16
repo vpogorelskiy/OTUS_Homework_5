@@ -6,12 +6,17 @@ enum ViewBuilder {
     }
     
     static func inputView() -> some View {
-        TextInputView()
+        TextInputView(viewModel: SuffixViewModel())
     }
     
-    static func detailView(inputText: String) -> some View {
-        let vm = DetailViewModel(text: inputText)
-        
+    static func detailView(text: String) -> some View {
+        let vm = SuffixViewModel()
+        vm.text = text
+        vm.analyze()
+        return detailView(vm: vm)
+    }
+    
+    static func detailView(vm: SuffixViewModel) -> some View {
         return SegmentedView(childViews: ["Statistics": AnyView(SuffixesView(viewModel: vm)),
                                           "Top triads": AnyView(TriadsView(viewModel: vm))])
             .navigationTitle("Text suffixes")
