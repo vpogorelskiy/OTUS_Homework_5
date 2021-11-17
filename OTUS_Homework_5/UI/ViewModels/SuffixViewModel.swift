@@ -1,17 +1,47 @@
 import Combine
 import DI
+import Foundation
 
 final class SuffixViewModel: ObservableObject {
-    @Published var suffixTuples: [SuffixViewModelItem] = []
+    @Published var suffixes: [SuffixViewModelItem] = []
     @Published var topTriads: [String] = []
+    @Published var searchText: String = ""
     
-    @Injected var textParser: TextParser!
+    // MARK: Private vars
     
-    var text: String = ""
+    private var allSuffixes: [SuffixViewModelItem] = [] {
+        didSet {
+            suffixes = allSuffixes
+        }
+    }
+    
+    private var debouncedText: String = "" {
+        didSet {
+            guard !debouncedText.isEmpty else {
+                suffixes = allSuffixes
+                return
+            }
+            
+            suffixes = allSuffixes.filter{ item in
+                item.suffix.localizedCaseInsensitiveContains(debouncedText)  //  contains(debouncedText)
+            }
+        }
+    }
+    private var subscriptions = Set<AnyCancellable>()
+    
+    @Injected private var textParser: TextParser!
+    
+    private var text: String = ""
     
     init(text: String) {
         self.text = text
         analyze()
+        $searchText
+            .debounce(for: .seconds(1), scheduler: DispatchQueue.main)
+            .sink { debounced in
+                self.debouncedText = debounced
+            }
+            .store(in: &subscriptions)
     }
     
     func analyze() {
@@ -22,7 +52,7 @@ final class SuffixViewModel: ObservableObject {
                 partialResult[suffix] = count + 1
             }
             
-            self?.suffixTuples = suffixDict.keys.sorted().reduce(into: [SuffixViewModelItem](), { partialResult, suffix in
+            self?.allSuffixes = suffixDict.keys.sorted().reduce(into: [SuffixViewModelItem](), { partialResult, suffix in
                 partialResult.append(SuffixViewModelItem(suffix: String(suffix), count: suffixDict[suffix] ?? 0))
             })
             
