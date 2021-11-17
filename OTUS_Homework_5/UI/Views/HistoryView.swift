@@ -17,12 +17,16 @@ struct HistoryView: View {
     }
     
     var suffixHistoryView: some View {
-        List {
-            ForEach(viewModel.textHistory, id: \.self) { text in
-                NavigationLink(text.prefix(50)) {
-                    NavigationLazyView {
-                        ViewBuilder.detailView(text: text)
-                    }
+        let suffixes = viewModel.suffixHistory.sorted { $0.1 > $1.1 }
+        let count = suffixes.count
+        let alphaStep: Double = 1.0 / Double(count)
+        
+        return List {
+            ForEach(0..<count) { i in
+                ZStack {
+                    Color.red.ignoresSafeArea().opacity(alphaStep * Double(i))
+                    Color.red.ignoresSafeArea().opacity(alphaStep * Double(count - i))
+                    Text("\(suffixes[i].0) - \(suffixes[i].1)s.")
                 }
             }
         }.navigationTitle("Suffix history")
