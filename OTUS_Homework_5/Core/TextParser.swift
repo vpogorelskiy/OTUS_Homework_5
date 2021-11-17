@@ -1,5 +1,4 @@
 import Combine
-import OrderedCollections
 import Foundation
 
 final class TextParser: ObservableObject {
