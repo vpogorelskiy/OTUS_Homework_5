@@ -30,6 +30,7 @@ final class SuffixViewModel: ObservableObject {
     private var subscriptions = Set<AnyCancellable>()
     
     @Injected private var textParser: TextParser!
+    @Injected private var textCache: TextCache!
     
     private var text: String = ""
     

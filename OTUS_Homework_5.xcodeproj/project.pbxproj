@@ -158,14 +158,6 @@
 			name = Packages;
 			sourceTree = "<group>";
 		};
-		2B73B221272F972C00E1CEA3 /* Cache */ = {
-			isa = PBXGroup;
-			children = (
-				2B73B222272F973D00E1CEA3 /* TextCache.swift */,
-			);
-			path = Cache;
-			sourceTree = "<group>";
-		};
 		2B73B226272F9A3400E1CEA3 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -182,6 +174,7 @@
 		2B73B22B272FA51400E1CEA3 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				2B73B222272F973D00E1CEA3 /* TextCache.swift */,
 				2B73B22C272FA51F00E1CEA3 /* DeepLinks.swift */,
 				2B41AF772744236D00490A02 /* TextParser.swift */,
 				2B8D6876274530C600BF4319 /* JobScheduler.swift */,
@@ -193,7 +186,6 @@
 			isa = PBXGroup;
 			children = (
 				2B1E0797272F18DF00DA317B /* Builder */,
-				2B73B221272F972C00E1CEA3 /* Cache */,
 				2B1E0796272F18CF00DA317B /* Helpers */,
 				2B1E0792272F134F00DA317B /* ViewModels */,
 				2B73B226272F9A3400E1CEA3 /* Views */,

@@ -7,7 +7,7 @@ class HistoryViewModel: ObservableObject {
 
     init(cache: TextCache = .init()) {
         self.cache = cache
-        textHistory = cache.getLastUsed().reversed()
+        textHistory = cache.getTextHistory().reversed()
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(onCacheDidChange),
                                                name: .wordCacheDidChange,
@@ -15,7 +15,7 @@ class HistoryViewModel: ObservableObject {
     }
     
     @objc private func onCacheDidChange() {
-        textHistory = cache.getLastUsed().reversed()
+        textHistory = cache.getTextHistory().reversed()
     }
 }
 
