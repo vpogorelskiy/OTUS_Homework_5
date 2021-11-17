@@ -2,9 +2,7 @@ import SwiftUI
 
 struct TextInputView: View {
     
-    @ObservedObject var viewModel: SuffixViewModel
-    
-//    @State private var inputText: String = ""
+    @ObservedObject var viewModel: InputViewModel
     
     var body: some View {
         UITextField.appearance().clearButtonMode = .whileEditing
@@ -17,7 +15,7 @@ struct TextInputView: View {
                 ZStack {
                     NavigationLink("Analyze",
                                    destination: NavigationLazyView {
-                        ViewBuilder.detailView(vm: viewModel)
+                        ViewBuilder.detailView(text: viewModel.text)
                     }).simultaneousGesture(TapGesture().onEnded{
                         viewModel.analyze()
                     })
