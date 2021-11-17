@@ -22,8 +22,14 @@ final class SuffixViewModel: ObservableObject {
                 return
             }
             
-            suffixes = allSuffixes.filter{ item in
-                item.suffix.localizedCaseInsensitiveContains(debouncedText)  //  contains(debouncedText)
+            JobScheduler.execute { duration in
+                let filtered = self.allSuffixes.filter { item in
+                    item.suffix.localizedCaseInsensitiveContains(self.debouncedText)
+                }
+                self.textCache.addSuffixSearch(suffix: self.debouncedText, duration: duration.getDuration())
+                DispatchQueue.main.async {
+                    self.suffixes = filtered
+                }
             }
         }
     }

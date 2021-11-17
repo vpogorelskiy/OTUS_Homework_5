@@ -38,6 +38,8 @@ class TextCache {
         lastUsed[suffix] = duration
         
         defaults.setValue(lastUsed, forKey: defaultsSuffixKey)
-        NotificationCenter.default.post(name: .suffixCacheDidChange, object: nil)
+        DispatchQueue.main.async {
+            NotificationCenter.default.post(name: .suffixCacheDidChange, object: nil)
+        }
     }
 }

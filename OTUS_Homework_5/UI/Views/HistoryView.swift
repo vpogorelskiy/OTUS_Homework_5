@@ -2,8 +2,7 @@ import SwiftUI
 
 struct HistoryView: View {
     @ObservedObject var viewModel = HistoryViewModel()
-    
-    
+
     var textHistoryView: some View {
         List {
             ForEach(viewModel.textHistory, id: \.self) { text in
@@ -24,7 +23,7 @@ struct HistoryView: View {
         return List {
             ForEach(0..<count) { i in
                 ZStack {
-                    Color.red.ignoresSafeArea().opacity(alphaStep * Double(i))
+                    Color.green.ignoresSafeArea().opacity(alphaStep * Double(i))
                     Color.red.ignoresSafeArea().opacity(alphaStep * Double(count - i))
                     Text("\(suffixes[i].0) - \(suffixes[i].1)s.")
                 }
