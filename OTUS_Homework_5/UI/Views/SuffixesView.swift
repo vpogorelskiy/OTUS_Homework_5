@@ -18,8 +18,8 @@ struct SuffixesView: View {
             
             let suffixes = selection == 0 ? viewModel.suffixTuples : viewModel.suffixTuples.reversed()
             
-            ForEach(suffixes, id: \.0) { tuple in
-                Text("\(tuple.0) - '\(tuple.1)'")
+            ForEach(suffixes, id: \.suffix) { item in
+                Text("\(item.suffix) - '\(item.count)'")
             }
         }
     }
@@ -27,6 +27,6 @@ struct SuffixesView: View {
 
 struct SuffixesView_Previews: PreviewProvider {
     static var previews: some View {
-        SuffixesView(viewModel: SuffixViewModel())
+        SuffixesView(viewModel: SuffixViewModel(text: Constants.mockText))
     }
 }

@@ -5,7 +5,7 @@ extension Notification.Name {
     static let wordCacheDidChange = Notification.Name(rawValue: "wordCacheDidChange")
 }
 
-class WordCache {
+class TextCache {
     private let defaultsKey = "OtusHomeworkDefaultsKey"
     private let defaults: UserDefaults
     

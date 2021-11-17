@@ -7,8 +7,8 @@ enum ViewBuilder {
             TextParser()
         }
         
-        Resolver.sharedInstance.register(WordCache.self) { r in
-            WordCache()
+        Resolver.sharedInstance.register(TextCache.self) { r in
+            TextCache()
         }
     }
     
@@ -17,13 +17,11 @@ enum ViewBuilder {
     }
     
     static func inputView() -> some View {
-        TextInputView(viewModel: SuffixViewModel())
+        TextInputView(viewModel: InputViewModel())
     }
     
     static func detailView(text: String) -> some View {
-        let vm = SuffixViewModel()
-        vm.text = text
-        vm.analyze()
+        let vm = SuffixViewModel(text: text)
         return detailView(vm: vm)
     }
     

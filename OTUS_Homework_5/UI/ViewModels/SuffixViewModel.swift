@@ -22,7 +22,7 @@ final class SuffixViewModel: ObservableObject {
                 partialResult[suffix] = count + 1
             }
             
-            self?.suffixTuples = suffixDict.keys.sorted().reduce(into: [suffixTuples](), { partialResult, suffix in
+            self?.suffixTuples = suffixDict.keys.sorted().reduce(into: [SuffixViewModelItem](), { partialResult, suffix in
                 partialResult.append(SuffixViewModelItem(suffix: String(suffix), count: suffixDict[suffix] ?? 0))
             })
             

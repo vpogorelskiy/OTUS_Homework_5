@@ -14,6 +14,6 @@ struct DetailView: View {
 
 struct DetailView_Previews: PreviewProvider {
     static var previews: some View {
-        DetailView(viewModel: SuffixViewModel())
+        DetailView(viewModel: SuffixViewModel(text: Constants.mockText))
     }
 }

@@ -3,9 +3,9 @@ import Foundation
 
 class HistoryViewModel: ObservableObject {
     @Published var textHistory: [String]
-    private var cache: WordCache
+    private var cache: TextCache
 
-    init(cache: WordCache = .init()) {
+    init(cache: TextCache = .init()) {
         self.cache = cache
         textHistory = cache.getLastUsed().reversed()
         NotificationCenter.default.addObserver(self,

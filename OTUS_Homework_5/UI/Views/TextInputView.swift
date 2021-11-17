@@ -39,6 +39,6 @@ struct TextInputView: View {
 
 struct TextInputView_Previews: PreviewProvider {
     static var previews: some View {
-        TextInputView(viewModel: SuffixViewModel())
+        TextInputView(viewModel: InputViewModel())
     }
 }

@@ -15,6 +15,6 @@ struct TriadsView: View {
 
 struct TriadsView_Previews: PreviewProvider {
     static var previews: some View {
-        TriadsView(viewModel: SuffixViewModel())
+        TriadsView(viewModel: SuffixViewModel(text: Constants.mockText))
     }
 }
