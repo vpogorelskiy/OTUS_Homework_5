@@ -3,6 +3,7 @@ import Foundation
 
 class HistoryViewModel: ObservableObject {
     @Published var textHistory: [String]
+    @Published var suffixHistory: [String] = []
     private var cache: TextCache
 
     init(cache: TextCache = .init()) {

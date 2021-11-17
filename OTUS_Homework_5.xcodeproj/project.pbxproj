@@ -24,7 +24,6 @@
 		2B8D6877274530C600BF4319 /* JobScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8D6876274530C600BF4319 /* JobScheduler.swift */; };
 		2BA03C8B272DAB070057BD79 /* TextInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA03C8A272DAB070057BD79 /* TextInputView.swift */; };
 		2BA03C8D272DAC260057BD79 /* ViewBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA03C8C272DAC260057BD79 /* ViewBuilder.swift */; };
-		2BA03C8F272DAC8F0057BD79 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA03C8E272DAC8F0057BD79 /* DetailView.swift */; };
 		2BA03C91272DB5100057BD79 /* NavigationLazyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA03C90272DB5100057BD79 /* NavigationLazyView.swift */; };
 		2BA03C93272DBC2A0057BD79 /* SegmentedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA03C92272DBC2A0057BD79 /* SegmentedView.swift */; };
 		D6E1B3982729A80A00A6F2D7 /* OTUS_Homework_5App.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6E1B3972729A80A00A6F2D7 /* OTUS_Homework_5App.swift */; };
@@ -78,7 +77,6 @@
 		2B8D6876274530C600BF4319 /* JobScheduler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobScheduler.swift; sourceTree = "<group>"; };
 		2BA03C8A272DAB070057BD79 /* TextInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextInputView.swift; sourceTree = "<group>"; };
 		2BA03C8C272DAC260057BD79 /* ViewBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewBuilder.swift; sourceTree = "<group>"; };
-		2BA03C8E272DAC8F0057BD79 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		2BA03C90272DB5100057BD79 /* NavigationLazyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationLazyView.swift; sourceTree = "<group>"; };
 		2BA03C92272DBC2A0057BD79 /* SegmentedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentedView.swift; sourceTree = "<group>"; };
 		D6E1B3942729A80A00A6F2D7 /* OTUS_Homework_5.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OTUS_Homework_5.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -161,10 +159,8 @@
 		2B73B226272F9A3400E1CEA3 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				2B8D68782745412A00BF4319 /* Results */,
 				2BA03C8A272DAB070057BD79 /* TextInputView.swift */,
-				2B1E0798272F191E00DA317B /* SuffixesView.swift */,
-				2B1E079A272F1DAB00DA317B /* TriadsView.swift */,
-				2BA03C8E272DAC8F0057BD79 /* DetailView.swift */,
 				2B73B227272F9A5B00E1CEA3 /* HistoryView.swift */,
 				2B73B229272F9B6300E1CEA3 /* RootView.swift */,
 			);
@@ -180,6 +176,15 @@
 				2B8D6876274530C600BF4319 /* JobScheduler.swift */,
 			);
 			path = Core;
+			sourceTree = "<group>";
+		};
+		2B8D68782745412A00BF4319 /* Results */ = {
+			isa = PBXGroup;
+			children = (
+				2B1E0798272F191E00DA317B /* SuffixesView.swift */,
+				2B1E079A272F1DAB00DA317B /* TriadsView.swift */,
+			);
+			path = Results;
 			sourceTree = "<group>";
 		};
 		2BA03C88272DAAE70057BD79 /* UI */ = {
@@ -370,7 +375,6 @@
 				2B73B223272F973D00E1CEA3 /* TextCache.swift in Sources */,
 				2BA03C8D272DAC260057BD79 /* ViewBuilder.swift in Sources */,
 				2B8D6877274530C600BF4319 /* JobScheduler.swift in Sources */,
-				2BA03C8F272DAC8F0057BD79 /* DetailView.swift in Sources */,
 				2B1E0799272F191E00DA317B /* SuffixesView.swift in Sources */,
 				2B8D68702744B59B00BF4319 /* InputViewModel.swift in Sources */,
 				2BA03C8B272DAB070057BD79 /* TextInputView.swift in Sources */,
